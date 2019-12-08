@@ -1,4 +1,4 @@
-const mongose = require('../mongoose');
+const mongose = require('../db/mongoose');
 
 const Task = mongose.model('Tasks',{
   name : {
@@ -6,7 +6,7 @@ const Task = mongose.model('Tasks',{
     required: true,
     trim: true
   },
-  descritption: {
+  description: {
     type: String
   },
   date:{
@@ -18,3 +18,5 @@ const Task = mongose.model('Tasks',{
     default: false
   }
 });
+
+module.exports = Task;
