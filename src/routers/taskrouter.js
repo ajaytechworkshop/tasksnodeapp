@@ -8,7 +8,6 @@ router.post('/tasks',async (req,res) => {
   try{
     await task.save();
     console.log('Task added..',task)
-    res.header("Access-Control-Allow-Origin", "*");
     res.status(201).send(task);
   }catch(e){
     console.log('Error creating tasks',e);
@@ -21,7 +20,6 @@ router.get('/tasks', async (req,res) => {
   try{
     const tasks = await Task.find({});
     console.log('Tasks..',tasks);
-    res.header("Access-Control-Allow-Origin", "*");
     res.send(tasks);
   }catch(e){
     console.log('Error getting tasks',e);
@@ -37,7 +35,6 @@ router.get('/tasks/:id', async(req,res) => {
       if(!task){
         return res.status(404).send();
       }
-      res.header("Access-Control-Allow-Origin", "*");
       res.status(200).send(task);
   }catch(e){
     console.log('Error while getting task details',e)
@@ -64,7 +61,6 @@ router.patch('/tasks/:id', async (req, res) => {
     if(!task){
       return res.status(404).send();
     }
-    res.header("Access-Control-Allow-Origin", "*");
     res.status(200).send(task);
   }catch(e){
     console.log('Error update task !!',e);
@@ -79,7 +75,6 @@ router.delete('/tasks/:id', async(req, res) => {
     if(!task){
       res.status(404).send();
     }
-    res.header("Access-Control-Allow-Origin", "*");
     res.status(200).send(task);
   }catch(e){
     console.log('Error deleting tasks..',e);

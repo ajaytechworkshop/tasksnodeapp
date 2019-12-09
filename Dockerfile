@@ -19,7 +19,7 @@ RUN npm install
 COPY . /app
 
 #Expose the applicaiton running port
-EXPOSE 6000
+EXPOSE 4000
 
 #Execute the docker image in our app node is command to start the app
 ENTRYPOINT ["node"]
