@@ -12,10 +12,9 @@ const Task = mongose.model('Tasks',{
   date:{
     type: Date,
   },
-  done:{
-    type: Boolean,
+  status:{
+    type: String,
     required: false,
-    default: false
   }
 });
 

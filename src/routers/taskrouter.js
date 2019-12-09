@@ -43,11 +43,11 @@ router.get('/tasks/:id', async(req,res) => {
 });
 
 //Update Tasks
-router.patch('/tasks/:id', async (req, res) => {
+router.put('/tasks/:id', async (req, res) => {
 
   //Get key from the request body
   const updates = Object.keys(req.body);
-  const allowedUpdates = ['description','done'];
+  const allowedUpdates = ['name','description','status'];
   
   // Return false if client tries to update task name and id
   const isValidatUpdate = updates.every ((update) => allowedUpdates.includes(update));
